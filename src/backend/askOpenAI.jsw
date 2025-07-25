@@ -1,6 +1,6 @@
 import { fetch } from 'wix-fetch';
 
-const OPENAI_KEY = 'sk-XXXXXXXXXXXXXXXX'; // ← פה שים את המפתח שלך
+const OPENAI_KEY = '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'; // ← פה שים את המפתח שלך
 
 export async function askOpenAIFromServer(messages) {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
