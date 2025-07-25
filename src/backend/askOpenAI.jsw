@@ -1,0 +1,19 @@
+// @wix-catalog-function
+// @permission: anyone
+
+// backend/askOpenAI.jsw
+import { askOpenAIFromServer } from 'backend/utils';
+
+export async function askOpenAI(message) {
+  try {
+    const messages = [
+      { role: "system", content: "אתה עוזר מכירות חכם שעובד לפי קוד המפצח" },
+      { role: "user", content: message }
+    ];
+    const reply = await askOpenAIFromServer(messages);
+    return { reply };
+  } catch (err) {
+    console.error("askOpenAI.jsw error:", err);
+    return { reply: "❌ שגיאה בתקשורת עם השרת." };
+  }
+}
